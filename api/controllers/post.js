@@ -2,8 +2,6 @@ import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 
 export const getPosts = (req, res) => {
-  console.log("Request Method:", req.method); // Log method
-  console.log("Request Body:", req.body); // Log body (should be empty for GET)
   const q = req.query.cat
     ? "SELECT * FROM posts WHERE cat=?"
     : "SELECT * FROM posts";
